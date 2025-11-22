@@ -30,7 +30,9 @@ Flarksiesis is a professional-grade audio plugin that combines powerful LFO modu
 
 ### Pre-built Binaries
 
-Download the latest release from the [Releases](https://github.com/yourusername/flarksiesis/releases) page.
+Pre-built binaries will be available on the [Releases](https://github.com/flarkflarkflark/flarksiesis/releases) page once the first release is created.
+
+In the meantime, you can download build artifacts from the [GitHub Actions](https://github.com/flarkflarkflark/flarksiesis/actions) page (requires GitHub login).
 
 #### Windows
 1. Extract `Flarksiesis.vst3` 
@@ -59,7 +61,7 @@ Download the latest release from the [Releases](https://github.com/yourusername/
 
 ```bash
 # Clone the repository
-git clone --recursive https://github.com/yourusername/flarksiesis.git
+git clone --recursive https://github.com/flarkflarkflark/flarksiesis.git
 cd flarksiesis
 
 # If you forgot --recursive, get JUCE:
