@@ -28,7 +28,8 @@ juce_add_plugin(Flarksiesis
     PLUGIN_CODE Flks
     FORMATS ${FORMATS}
     PRODUCT_NAME "Flarksiesis"
-    
+    LV2URI "http://flarkaudio.com/flarksiesis"
+
     # VST3 category
     VST3_CATEGORIES "Fx" "Filter" "Modulation"
     
@@ -66,6 +67,8 @@ target_compile_definitions(Flarksiesis
 target_link_libraries(Flarksiesis
     PRIVATE
         juce::juce_audio_utils
+        juce::juce_audio_processors
+        juce::juce_gui_basics
         juce::juce_dsp
     PUBLIC
         juce::juce_recommended_config_flags
