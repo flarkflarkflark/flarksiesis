@@ -1,0 +1,64 @@
+name: Windows Build
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  release:
+    types: [ created ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      with:
+        submodules: recursive
+    
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1.1
+    
+    - name: Configure CMake
+      run: |
+        mkdir build
+        cd build
+        cmake .. -G "Visual Studio 17 2022" -A x64
+    
+    - name: Build
+      run: |
+        cd build
+        cmake --build . --config Release
+    
+    - name: Package artifacts
+      run: |
+        mkdir artifacts
+        xcopy /E /I "build\Flarksiesis_artefacts\Release\VST3\Flarksiesis.vst3" "artifacts\Flarksiesis.vst3"
+        xcopy /E /I "build\Flarksiesis_artefacts\Release\Standalone\Flarksiesis.exe" "artifacts\"
+      shell: cmd
+    
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: Flarksiesis-Windows-x64
+        path: artifacts/
+    
+    - name: Create release archive
+      if: github.event_name == 'release'
+      run: |
+        cd artifacts
+        7z a Flarksiesis-Windows-x64.zip *
+      shell: cmd
+    
+    - name: Upload to release
+      if: github.event_name == 'release'
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ github.event.release.upload_url }}
+        asset_path: artifacts/Flarksiesis-Windows-x64.zip
+        asset_name: Flarksiesis-Windows-x64.zip
+        asset_content_type: application/zip
