@@ -66,6 +66,8 @@ target_compile_definitions(Flarksiesis
 target_link_libraries(Flarksiesis
     PRIVATE
         juce::juce_audio_utils
+        juce::juce_audio_processors
+        juce::juce_gui_basics
         juce::juce_dsp
     PUBLIC
         juce::juce_recommended_config_flags
