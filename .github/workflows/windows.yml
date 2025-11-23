@@ -54,7 +54,7 @@ jobs:
         mkdir artifacts
         xcopy /E /I "build\Flarksiesis_artefacts\Release\VST3\Flarksiesis.vst3" "artifacts\Flarksiesis.vst3"
         copy "build\Flarksiesis_artefacts\Release\Standalone\Flarksiesis.exe" "artifacts\"
-        if exist "build\Flarksiesis-v2.0.0-Windows-Installer.exe" copy "build\Flarksiesis-v2.0.0-Windows-Installer.exe" "artifacts\"
+        if exist "build\Flarksiesis-v2.1.0-Windows-Installer.exe" copy "build\Flarksiesis-v2.1.0-Windows-Installer.exe" "artifacts\"
         exit /b 0
       shell: cmd
     

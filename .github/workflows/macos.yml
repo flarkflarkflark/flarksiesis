@@ -78,23 +78,23 @@ jobs:
             <choice id="vst3" title="VST3 Plugin">
                 <pkg-ref id="com.flarkaudio.flarksiesis.vst3"/>
             </choice>
-            <pkg-ref id="com.flarkaudio.flarksiesis.vst3" version="2.0.0">Flarksiesis-VST3.pkg</pkg-ref>
+            <pkg-ref id="com.flarkaudio.flarksiesis.vst3" version="2.1.0">Flarksiesis-VST3.pkg</pkg-ref>
             <choice id="standalone" title="Standalone Application">
                 <pkg-ref id="com.flarkaudio.flarksiesis.standalone"/>
             </choice>
-            <pkg-ref id="com.flarkaudio.flarksiesis.standalone" version="2.0.0">Flarksiesis-Standalone.pkg</pkg-ref>
+            <pkg-ref id="com.flarkaudio.flarksiesis.standalone" version="2.1.0">Flarksiesis-Standalone.pkg</pkg-ref>
         </installer-gui-script>
         DISTXML
-        
+
         # Build final installer
         productbuild --distribution distribution.xml \
                      --package-path . \
-                     Flarksiesis-v2.0.0-macOS.pkg
+                     Flarksiesis-v2.1.0-macOS.pkg
     
     - name: Package artifacts
       run: |
         mkdir -p artifacts
-        cp build/Flarksiesis-v2.0.0-macOS.pkg artifacts/ || true
+        cp build/Flarksiesis-v2.1.0-macOS.pkg artifacts/ || true
         cp -r build/Flarksiesis_artefacts/Release/VST3/Flarksiesis.vst3 artifacts/ || true
         cp -r build/Flarksiesis_artefacts/Release/Standalone/Flarksiesis.app artifacts/ || true
     
