@@ -214,9 +214,3 @@ void FlarksiesisAudioProcessorEditor::resized()
     feedbackLabel.setBounds(outputArea.removeFromTop(20));
     feedbackSlider.setBounds(outputArea.reduced(5));
 }
-
-//==============================================================================
-juce::AudioProcessor* JUCE_CALLTYPE createPluginFilter()
-{
-    return new FlarksiesisAudioProcessor();
-}

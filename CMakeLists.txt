@@ -28,10 +28,11 @@ juce_add_plugin(Flarksiesis
     PLUGIN_CODE Flks
     FORMATS ${FORMATS}
     PRODUCT_NAME "Flarksiesis"
-    
+    LV2URI "http://flarkaudio.com/plugins/flarksiesis"
+
     # VST3 category
     VST3_CATEGORIES "Fx" "Filter" "Modulation"
-    
+
     # Plugin characteristics
     IS_SYNTH FALSE
     NEEDS_MIDI_INPUT FALSE
@@ -40,7 +41,7 @@ juce_add_plugin(Flarksiesis
     EDITOR_WANTS_KEYBOARD_FOCUS FALSE
     COPY_PLUGIN_AFTER_BUILD FALSE
     PLUGIN_VERSION "2.0.0"
-    
+
     # Description
     DESCRIPTION "Flarksiesis - LFO-modulated filter effect with multiple waveforms and filter types"
 )

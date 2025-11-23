@@ -1,6 +1,6 @@
 #pragma once
 
-#include <JuceHeader.h>
+#include <juce_gui_basics/juce_gui_basics.h>
 #include "PluginProcessor.h"
 
 //==============================================================================
@@ -65,8 +65,8 @@ public:
                 {
                     // Use deterministic pseudo-random for visualization
                     // Avoid getSystemRandom() in paint - not thread safe
-                    juce::Random r(static_cast<int64>(phase * 1000000));
-                    value = std::sin(phase * juce::MathConstants<float>::twoPi * 8.0f) * 
+                    juce::Random r(static_cast<juce::int64>(phase * 1000000));
+                    value = std::sin(phase * juce::MathConstants<float>::twoPi * 8.0f) *
                             (r.nextFloat() * 0.3f + 0.7f);
                     break;
                 }

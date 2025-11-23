@@ -378,7 +378,6 @@ void FlarksiesisAudioProcessor::processBlock(juce::AudioBuffer<float>& buffer, j
     float stereoWidth = *apvts.getRawParameterValue("stereowidth");
     float feedback = *apvts.getRawParameterValue("feedback");
 
-    const int numSamples = buffer.getNumSamples();
     float phaseIncrement = rate / static_cast<float>(currentSampleRate);
 
     // Create dry buffer for mixing

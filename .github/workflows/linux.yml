@@ -2,7 +2,7 @@ name: Linux Build
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [ main, develop, 'claude/**' ]
   pull_request:
     branches: [ main ]
   release:
@@ -38,12 +38,13 @@ jobs:
           libxinerama-dev \
           libxrandr-dev \
           libxrender-dev \
-          libwebkit2gtk-4.0-dev \
+          libwebkit2gtk-4.1-dev \
           libglu1-mesa-dev \
           mesa-common-dev
     
     - name: Configure CMake
       run: |
+        rm -rf build
         mkdir build
         cd build
         cmake .. -DCMAKE_BUILD_TYPE=Release
