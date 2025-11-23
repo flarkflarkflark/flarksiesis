@@ -1,0 +1,31 @@
+I need you to push a git repository to GitHub.
+
+Repository location: /home/flark/Downloads/flarksiesis-repo/
+GitHub username: flarkflarkflark
+Repository name: flarksiesis
+
+Please execute these commands:
+
+cd /home/flark/Downloads/flarksiesis-repo
+
+git init
+git config user.name "flarkAUDIO"
+git config user.email "flarkaudio@example.com"
+git add .
+git commit -m "Initial commit: Flarksiesis v2.0.1 - Audio plugin with macOS crash fixes and installers"
+
+git submodule add https://github.com/juce-framework/JUCE.git JUCE
+git submodule update --init --recursive
+git add .gitmodules JUCE
+git commit -m "Add JUCE submodule"
+
+# Try using GitHub CLI if available:
+gh repo create flarksiesis --public --source=. --remote=origin --description="Flarksiesis v2.0 - LFO-modulated filter effect by flarkAUDIO"
+
+# Then push:
+git push -u origin main
+
+If gh doesn't work or you need manual setup, tell me and I'll provide alternative instructions.
+If git asks for authentication, let me know what it needs.
+
+Report the results.
