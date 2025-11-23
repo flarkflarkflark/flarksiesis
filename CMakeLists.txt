@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.15)
 
-project(Flarksiesis VERSION 2.0.0)
+project(Flarksiesis VERSION 2.1.0)
 
 # Set C++ standard
 set(CMAKE_CXX_STANDARD 17)
@@ -40,7 +40,7 @@ juce_add_plugin(Flarksiesis
     IS_MIDI_EFFECT FALSE
     EDITOR_WANTS_KEYBOARD_FOCUS FALSE
     COPY_PLUGIN_AFTER_BUILD FALSE
-    PLUGIN_VERSION "2.0.0"
+    PLUGIN_VERSION "2.1.0"
 
     # Description
     DESCRIPTION "Flarksiesis - LFO-modulated filter effect with multiple waveforms and filter types"

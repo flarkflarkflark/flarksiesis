@@ -2,7 +2,7 @@
 
 All notable changes to Flarksiesis will be documented in this file.
 
-## [2.0.1] - Unreleased
+## [2.1.0] - 2025-01-23
 
 ### Fixed
 - **macOS Crash Fix**: Fixed immediate crash on load in macOS DAWs
@@ -10,7 +10,17 @@ All notable changes to Flarksiesis will be documented in this file.
   - Replaced thread-unsafe `Random::getSystemRandom()` with per-instance random generator
   - Added proper timer cleanup in visualizer destructor
   - Added safety checks in `processBlock()` for edge cases
+- **Build System Fixes**: Complete overhaul of GitHub Actions workflows
+  - Updated to upload-artifact@v4 across all platforms
+  - Fixed JUCE 7.x compatibility issues (removed deprecated JuceHeader.h)
+  - Fixed LV2 plugin build configuration with proper URI scheme
+  - Updated Linux webkit2gtk dependency to 4.1
+  - Fixed duplicate symbol definitions causing linker errors
+  - Added forced clean builds to ensure proper CMake configuration
+  - Enabled workflow triggers for claude/* development branches
 - Thread safety improvements for cross-platform stability
+- Fixed int64 type qualification errors in JUCE 7.x
+- Fixed duplicate variable declarations in audio processing code
 
 ### Added
 - macOS .pkg installer with component selection
@@ -18,6 +28,8 @@ All notable changes to Flarksiesis will be documented in this file.
 - Linux .deb and .rpm package generation
 - Automated installer builds in GitHub Actions
 - Installation scripts for easy local installer creation
+- LV2 plugin format support for Linux
+- Improved Windows packaging with proper error handling
 
 ## [2.0.0] - 2024
 

@@ -1,9 +1,9 @@
-# Flarksiesis v2.0
+# Flarksiesis v2.1
 
-**Advanced LFO-Modulated Filter Effect**  
+**Advanced LFO-Modulated Filter Effect**
 *by flarkAUDIO*
 
-![Version](https://img.shields.io/badge/version-2.0.0-orange)
+![Version](https://img.shields.io/badge/version-2.1.0-orange)
 ![License](https://img.shields.io/badge/license-GPL--3.0-orange)
 ![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-orange)
 
