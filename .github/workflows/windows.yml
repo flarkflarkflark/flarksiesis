@@ -26,9 +26,11 @@ jobs:
     
     - name: Configure CMake
       run: |
+        if (Test-Path build) { Remove-Item -Recurse -Force build }
         mkdir build
         cd build
         cmake .. -G "Visual Studio 17 2022" -A x64
+      shell: powershell
     
     - name: Build
       run: |
