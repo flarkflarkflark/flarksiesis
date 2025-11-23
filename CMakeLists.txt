@@ -134,5 +134,5 @@ elseif(UNIX)
             OPTIONAL)
 endif()
 
-# Include packaging
-include(cmake/Packaging.cmake)
+# Include packaging (optional)
+include(cmake/Packaging.cmake OPTIONAL)
