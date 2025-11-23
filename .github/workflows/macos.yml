@@ -8,6 +8,9 @@ on:
   release:
     types: [ created ]
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: macos-latest
@@ -95,7 +98,7 @@ EOF
         cp -r build/Flarksiesis_artefacts/Release/Standalone/Flarksiesis.app artifacts/ || true
     
     - name: Upload artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: Flarksiesis-macOS-Universal
         path: artifacts/
