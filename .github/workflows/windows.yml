@@ -2,7 +2,7 @@ name: Windows Build
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [ main, develop, 'claude/**' ]
   pull_request:
     branches: [ main ]
   release:
@@ -51,8 +51,9 @@ jobs:
       run: |
         mkdir artifacts
         xcopy /E /I "build\Flarksiesis_artefacts\Release\VST3\Flarksiesis.vst3" "artifacts\Flarksiesis.vst3"
-        xcopy /E /I "build\Flarksiesis_artefacts\Release\Standalone\Flarksiesis.exe" "artifacts\"
-        copy "build\Flarksiesis-v2.0.0-Windows-Installer.exe" "artifacts\" 2>nul || echo No installer found
+        copy "build\Flarksiesis_artefacts\Release\Standalone\Flarksiesis.exe" "artifacts\"
+        if exist "build\Flarksiesis-v2.0.0-Windows-Installer.exe" copy "build\Flarksiesis-v2.0.0-Windows-Installer.exe" "artifacts\"
+        exit /b 0
       shell: cmd
     
     - name: Upload artifacts
